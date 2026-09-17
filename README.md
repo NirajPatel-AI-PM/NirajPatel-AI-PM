@@ -18,19 +18,19 @@ That turns out to be the same discipline at three altitudes.
 
 ### How I think about problems
 
+- [The operating system for an AI-adopting team](https://github.com/NirajPatel-AI-PM/evidence-as-a-build-output/blob/main/essays/operating-system-for-an-ai-adopting-team.md) — knowledge in a wiki does not get used; knowledge that loads itself at the moment of relevance does.
 - [Prove it or it didn't happen](https://github.com/NirajPatel-AI-PM/agent-memory-proving-ground) — why agent improvements go unmeasured, and what measuring one actually costs.
 - [Evidence as a build output](https://github.com/NirajPatel-AI-PM/evidence-as-a-build-output) — the validation package does not have to be assembled by hand, after the fact, by people reconstructing what happened.
-- [The operating system for an AI-adopting team](https://github.com/NirajPatel-AI-PM/evidence-as-a-build-output/blob/main/essays/operating-system-for-an-ai-adopting-team.md) — knowledge in a wiki does not get used; knowledge that loads itself at the moment of relevance does.
 - [Debugging absences](https://github.com/NirajPatel-AI-PM/evidence-as-a-build-output/blob/main/essays/debugging-absences.md) — the hardest production failures in agent systems leave nothing in the log.
 
 ### Selected work
 
 Built for a regulated clinical platform. Not public, described here in the general case.
 
-- **A factory for integration connectors.** An API document and a change request go in; a deployable connector comes out alongside its complete validation package — requirements, risk assessment, delivery backlog, test evidence, controlled documents — every artifact traced to the requirement it satisfies, with human approval at the points where a human must actually decide. Compliance evidence stops being reconstructed and starts being emitted.
-- **The same factory, inverted, for inbound events.** A spec goes in; a deployable event-ingest service comes out with the same evidence spine. Younger and still maturing — and the reason I believe the first one was a pattern rather than a script.
 - **A shared engineering layer, installed once.** Roughly three dozen skills plus quality gates, workflows and connectors, installed at user scope so an entire team inherits the same conventions — including the ones that encode regulatory process — from a single idempotent command.
 - **Operator tooling for a multi-environment agent platform.** Promotion of an agent and its full dependency closure between environments under a stable identity, so the second run updates instead of duplicating, plus a documented method for diagnosing the failures that present as an absence rather than an error.
+- **A factory for integration connectors.** An API document and a change request go in; a deployable connector comes out alongside its complete validation package — requirements, risk assessment, delivery backlog, test evidence, controlled documents — every artifact traced to the requirement it satisfies, with human approval at the points where a human must actually decide. Compliance evidence stops being reconstructed and starts being emitted.
+- **The same factory, inverted, for inbound events.** A spec goes in; a deployable event-ingest service comes out with the same evidence spine. Younger and still maturing — and the reason I believe the first one was a pattern rather than a script.
 
 ### Elsewhere
 
