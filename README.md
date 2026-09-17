@@ -2,7 +2,7 @@
 
 I make AI engineering accountable — in an industry where "it seems better" is not an acceptable answer.
 
-I lead AI product and engineering practice on a regulated clinical platform. Most of what I build is in service of one idea: a claim about a software system should be checkable by someone who does not trust the person making it.
+I built the AI engineering practice on a regulated clinical platform. Most of what I build is in service of one idea: a claim about a software system should be checkable by someone who does not trust the person making it.
 
 That turns out to be the same discipline at three altitudes.
 
@@ -22,7 +22,6 @@ That turns out to be the same discipline at three altitudes.
 - [Evidence as a build output](https://github.com/NirajPatel-AI-PM/evidence-as-a-build-output) — the validation package does not have to be assembled by hand, after the fact, by people reconstructing what happened.
 - [The operating system for an AI-adopting team](https://github.com/NirajPatel-AI-PM/evidence-as-a-build-output/blob/main/essays/operating-system-for-an-ai-adopting-team.md) — knowledge in a wiki does not get used; knowledge that loads itself at the moment of relevance does.
 - [Debugging absences](https://github.com/NirajPatel-AI-PM/evidence-as-a-build-output/blob/main/essays/debugging-absences.md) — the hardest production failures in agent systems leave nothing in the log.
-- [What survives when you design for the verifier](https://github.com/NirajPatel-AI-PM/evidence-as-a-build-output/blob/main/essays/designing-for-the-verifier.md) — a paused research build, and what it taught me about how agents should be made to work.
 
 ### Selected work
 
