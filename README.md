@@ -22,6 +22,7 @@ That turns out to be the same discipline at three altitudes.
 - [Prove it or it didn't happen](https://github.com/NirajPatel-AI-PM/agent-memory-proving-ground) — why agent improvements go unmeasured, and what measuring one actually costs.
 - [Evidence as a build output](https://github.com/NirajPatel-AI-PM/evidence-as-a-build-output) — the validation package does not have to be assembled by hand, after the fact, by people reconstructing what happened.
 - [Debugging absences](https://github.com/NirajPatel-AI-PM/evidence-as-a-build-output/blob/main/essays/debugging-absences.md) — the hardest production failures in agent systems leave nothing in the log.
+- [What survives when you design for the verifier](https://github.com/NirajPatel-AI-PM/evidence-as-a-build-output/blob/main/essays/designing-for-the-verifier.md) — a paused personal experiment, never in production, and what building it taught me about how agents should be made to work.
 
 ### Selected work
 
