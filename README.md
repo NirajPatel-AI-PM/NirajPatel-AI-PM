@@ -1,40 +1,26 @@
 ## Niraj Patel
 
-I make AI engineering accountable, in an industry where "it seems better" is not an acceptable answer.
-
-I built the AI engineering practice on a regulated clinical platform. Most of what I build serves one idea. A claim about a software system should be checkable by someone who does not trust the person making it.
-
-That turns out to be the same discipline at three altitudes.
-
-- **Under regulation.** Shipping an agent is easy. The hard part is shipping one inside a validated, audited software lifecycle, with traceability, verification evidence, human approval gates, and an auditor who can ask you to prove it. That is where I work.
-- **Across an organisation.** A company does not adopt AI engineering by buying licences. It adopts by installing a layer of skills, quality gates, conventions and connectors that every engineer inherits by default, so one person's context becomes everyone's starting point.
-- **In the work itself.** Teams improve agent systems on assertion far more often than on measurement. I build the harnesses that settle the question, including the ones designed to return a result I would rather not see.
+I lead product for a regulated clinical research company's internal builder platform, and I write much of the software myself. With Claude Code and Claude Fable 5, I built our shared AI engineering layer, the deployment tooling for our agent apps, and a new memory system for our agents. I build the measurement too, so each of them has to show that it works.
 
 ### Two things you can run
 
-**[evidence-as-a-build-output](https://github.com/NirajPatel-AI-PM/evidence-as-a-build-output)**. A service and its complete validation package, emitted from one specification in one run: requirements, risk register, generated tests, traceability matrix, summary report. Two runs of the same input are byte-identical. Break the service and the report says so in its first line, then exits non-zero. Node 24, no dependencies.
+**[team-os](https://github.com/NirajPatel-AI-PM/team-os)**. A Claude Code plugin with the skills, subagents and hooks a product team uses to ship, and the records that show whether the team uses them. It is a clean-room version of a system I built at work. I share it to show the intent and the design, and it holds none of the company's own skills or process. After you install it, its skills load when the work calls for them, and two scripts turn the usage records into an adoption summary and an HTML dashboard.
 
-**[agent-memory-proving-ground](https://github.com/NirajPatel-AI-PM/agent-memory-proving-ground)**. Three agents identical except for how they remember. A blinded judge scores them against the same probes on a pinned rubric. One probe has no correct answer, so the scoring penalises an arm that improves by becoming more confident. The published run reports a tie between the sophisticated arm and the naive one, and says which layer failed and why. Node 24, no dependencies.
+```
+/plugin marketplace add NirajPatel-AI-PM/team-os
+/plugin install team-os@niraj-patel
+```
 
-### How I think about problems
+**[skill-adherence-eval](https://github.com/NirajPatel-AI-PM/skill-adherence-eval)**. An evaluation that measures, for any folder of `SKILL.md` files, whether a model picks the right skill for a request and then follows it. It records every model call, so you can replay a run with no API key. The report gives the selection and adherence rates and the noise floor between repeats.
 
-- [The operating system for an AI-adopting team](https://github.com/NirajPatel-AI-PM/evidence-as-a-build-output/blob/main/essays/operating-system-for-an-ai-adopting-team.md). Knowledge in a wiki does not get used. Knowledge that loads itself at the moment of relevance does.
-- [Prove it or it didn't happen](https://github.com/NirajPatel-AI-PM/agent-memory-proving-ground). Why agent improvements go unmeasured, and what measuring one costs.
-- [Evidence as a build output](https://github.com/NirajPatel-AI-PM/evidence-as-a-build-output). Nobody has to assemble the validation package by hand, after the fact, from what people remember.
-- [Debugging absences](https://github.com/NirajPatel-AI-PM/evidence-as-a-build-output/blob/main/essays/debugging-absences.md). The hardest production failures in agent systems leave nothing in the log.
-- [What survives when you design for the verifier](https://github.com/NirajPatel-AI-PM/evidence-as-a-build-output/blob/main/essays/designing-for-the-verifier.md). A paused research build, never in production, and what building it taught me about how agents should work.
+```
+RECORDINGS_DIR=runs/claude-sonnet-5/recordings MODEL_LABEL=claude-sonnet-5 node eval.ts --repeats 3
+```
 
-### Selected work
+### Essays
 
-I built these for a regulated clinical platform. None is public, so I describe them in the general case.
-
-- **A study-configuration product, from zero to deployment.** A product for building and running clinical studies on a regulated platform: protocol configuration, participant-facing content, and site workflow. A study team defines a study once and deploys it without a per-study engineering build. I took it from nothing to production. It now runs more than 100 active studies for more than 20 pharmaceutical sponsors, and tens of thousands of participants have enrolled.
-- **A shared engineering layer, installed once.** Roughly three dozen skills plus quality gates, workflows and connectors. One idempotent command installs them at user scope, so an entire team inherits the same conventions, including the ones that encode regulatory process.
-- **Operator tooling for a multi-environment agent platform.** It promotes an agent and its full dependency closure between environments under a stable identity, so the second run updates instead of duplicating. It also documents a method for diagnosing the failures that present as an absence rather than an error.
-- **A deterministic conformance check that replaced a vendor review cycle.** An approved source document and the digital version built from it go in. Out comes either a certificate of conformance or a located finding, byte-identical across runs. A difference matching no ruling blocks the certificate. Quality owns the rulings, the code owns only detection. Writing the standard down was harder than comparing the documents, because the review it replaced had never set one.
-- **A factory for integration connectors.** An API document and a change request go in. A deployable connector comes out alongside its complete validation package: requirements, risk assessment, delivery backlog, test evidence, controlled documents. The package traces every artifact to the requirement it satisfies, and stops for human approval at the points where a human must decide. Nobody reconstructs the compliance evidence any more. The run emits it.
-- **The same factory, inverted, for inbound events.** A spec goes in. A deployable event-ingest service comes out, and produces its evidence the same way. It is younger and still maturing, and it is the reason I believe the first one was a pattern rather than a script.
-
-### Elsewhere
-
-Open to conversations about building AI systems where the evidence has to hold up, in regulated industries especially.
+- [How a playbook spread, and what its memory measures](https://github.com/NirajPatel-AI-PM/NirajPatel-AI-PM/blob/main/essays/how-a-playbook-spread.md). How I got our shared AI engineering layer adopted by over 35 people. [team-os](https://github.com/NirajPatel-AI-PM/team-os) is a clean-room version of it.
+- [Prioritizing capabilities](https://github.com/NirajPatel-AI-PM/NirajPatel-AI-PM/blob/main/essays/prioritizing-capabilities.md). Why I said "not now" to a feature the platform needed, and what backed that answer.
+- [Rolling out Claude Design](https://github.com/NirajPatel-AI-PM/NirajPatel-AI-PM/blob/main/essays/rolling-out-claude-design.md). How Claude Design reached over half the company, and why the design systems went in first.
+- [Slowing a launch to meet customer needs](https://github.com/NirajPatel-AI-PM/NirajPatel-AI-PM/blob/main/essays/slowing-a-launch-to-meet-customer-needs.md). Why we slowed a large customer's launch, and built the isolated workspaces they needed with them.
+- [Harness engineering](https://github.com/NirajPatel-AI-PM/NirajPatel-AI-PM/blob/main/essays/harness-engineering.md). How I rebuilt an agent memory system with Claude Fable 5, and built the evaluation that proved it.
